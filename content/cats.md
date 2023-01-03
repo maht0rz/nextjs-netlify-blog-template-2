@@ -1,5 +1,5 @@
 ---
 cats:
-  - name: kitty kitttyyyy
+  - name: meooow
   - name: Ms. Kitty
 ---
