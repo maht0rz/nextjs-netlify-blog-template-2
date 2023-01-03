@@ -1,4 +1,8 @@
 ---
-- name: "Ms. Kitty"
-- name: "Mr. Kitty"
+"0":
+  name: Ms. Kitty
+"1":
+  name: Mr. Kitty
+cats:
+  - name: kitty kit
 ---
