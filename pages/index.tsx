@@ -21,7 +21,7 @@ export const getStaticProps = () => {
   };
 };
 
-export default function Home({ cats }: { cats: [] }) {
+export default function Home({ cats }: { cats: any[] }) {
   console.log("cats", cats);
   return (
     <>
