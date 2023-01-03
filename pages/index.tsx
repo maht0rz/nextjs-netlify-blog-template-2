@@ -5,29 +5,32 @@ import matter from "gray-matter";
 
 export const getStaticProps = () => {
   const files = fs.readdirSync("content");
-  const posts = files.map((fileName) => {
+  const cats = files.map((fileName) => {
     console.log("reading file name", fileName);
     const slug = fileName.replace(".md", "");
     const readFile = fs.readFileSync(`content/${fileName}`, "utf-8");
     const { data } = matter(readFile);
 
-    return {
-      data,
-    };
+    return data;
   });
 
   return {
     props: {
-      posts,
+      cats: cats[0],
     },
   };
 };
 
-export default function Home({ posts }: { posts: [] }) {
-  console.log("posts", posts);
+export default function Home({ cats }: { cats: [] }) {
+  console.log("cats", cats);
   return (
     <>
-      <main className={styles.main}>hello</main>
+      <main className={styles.main}>
+        <h1>Cats</h1>
+        {cats.map((cat, i) => (
+          <p key={i}>{cat.name}</p>
+        ))}
+      </main>
     </>
   );
 }
